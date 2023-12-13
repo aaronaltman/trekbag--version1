@@ -1,7 +1,9 @@
 export default function Counter() {
   return (
     <>
-      <p>1/3 items packed</p>
+      <p>
+        <b>1</b>/ 3 items packed
+      </p>
     </>
   );
 }
