@@ -1,19 +1,19 @@
 export default function ItemList({ items }) {
   return (
     <ul>
-      {items.map((item) => (
-        <Item key={item.id} name={item.name} />
+      {items.map((list) => (
+        <Item key={list.id} name={list.name} />
       ))}
     </ul>
   );
 }
 
-function Item({ name }) {
+function Item({ list }) {
   return (
     <li className="item">
       <label>
         <input type="checkbox" />
-        {name}
+        {list.name}
       </label>
       <button className="delete-button">Delete X</button>
     </li>
