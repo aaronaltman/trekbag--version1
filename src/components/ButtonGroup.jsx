@@ -5,7 +5,7 @@ export default function ButtonGroup() {
   return (
     <section className="button-group">
       {SecondaryButtons.map((label) => (
-        <Button>{label}</Button>
+        <Button key={label}>{label}</Button>
       ))}
     </section>
   );

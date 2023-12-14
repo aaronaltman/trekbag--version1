@@ -1,34 +1,26 @@
 import Button from "./Button";
 import { useState } from "react";
 
-export default function AddItemForm({ setItems }) {
+export default function AddItemForm() {
   const [itemText, setItemText] = useState("");
 
   return (
     <form
-      onSubmit={(event) => {
-        event.preventDefault();
-
-        const newItem = {
-          id: 6,
-          name: itemText,
-          packed: false,
-        };
-        setItems((prevItems) => {
-          return [...prevItems, newItem];
-        });
+      onSubmit={(e) => {
+        e.preventDefault();
       }}
     >
-      <h2>Add an Item</h2>
+      <h2>
+        <b>Add an Item</b>
+      </h2>
       <input
         type="text"
         value={itemText}
-        placeholder="Add Item here"
         onChange={(e) => {
           setItemText(e.target.value);
         }}
       />
-      <Button>Add Item to List</Button>
+      <Button>Click Me</Button>
     </form>
   );
 }
