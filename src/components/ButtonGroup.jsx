@@ -1,12 +1,12 @@
 import Button from "./Button";
+import { SecondaryButtons } from "../lib/constants";
 
 export default function ButtonGroup() {
   return (
     <section className="button-group">
-      <Button type="secondary">This is 1</Button>
-      <Button type="secondary">This is 1</Button>
-      <Button type="secondary">This is 1</Button>
-      <Button type="secondary">This is 1</Button>
+      {SecondaryButtons.map((label) => (
+        <Button>{label}</Button>
+      ))}
     </section>
   );
 }
