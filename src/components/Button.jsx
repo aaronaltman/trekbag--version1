@@ -1,7 +1,7 @@
-export default function Button() {
+export default function Button({ label }) {
   return (
     <button className="btn" type="submit">
-      Add To List
+      {label}
     </button>
   );
 }
