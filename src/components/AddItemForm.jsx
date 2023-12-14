@@ -1,8 +1,9 @@
 import Button from "./Button";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function AddItemForm({ setItems }) {
   const [itemText, setItemText] = useState("");
+
   return (
     <form
       onSubmit={(event) => {
@@ -13,7 +14,9 @@ export default function AddItemForm({ setItems }) {
           name: itemText,
           packed: false,
         };
-        setItems((prevItems) => [...prevItems, newItem]);
+        setItems((prevItems) => {
+          return [...prevItems, newItem];
+        });
       }}
     >
       <h2>Add an Item</h2>
