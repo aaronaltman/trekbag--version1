@@ -8,16 +8,16 @@ export default function ButtonGroup({
 }) {
   return (
     <section className="button-group">
-      <Button class="secondary" onClick={markAllComplete}>
+      <Button buttonType="secondary" onClick={markAllComplete}>
         Mark all as complete
       </Button>
-      <Button class="secondary" onClick={markAllIncomplete}>
+      <Button buttonType="secondary" onClick={markAllIncomplete}>
         Mark all as incomplete
       </Button>
-      <Button class="secondary" onClick={handleResettoInitial}>
+      <Button buttonType="secondary" onClick={handleResettoInitial}>
         Reset to initial
       </Button>
-      <Button class="secondary" onClick={handleRemoveAll}>
+      <Button buttonType="secondary" onClick={handleRemoveAll}>
         Remove all items
       </Button>
     </section>

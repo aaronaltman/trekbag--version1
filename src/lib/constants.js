@@ -3,10 +3,3 @@ export const myItems = [
   { id: 2, name: "Item 2", description: "Item 2 description", packed: false },
   { id: 3, name: "Item 3", description: "Item 3 description", packed: false },
 ];
-
-export const SecondaryButtons = [
-  "Mark All As Complete",
-  "Remove All Incomplete",
-  "Reset All",
-  "Remove All",
-];

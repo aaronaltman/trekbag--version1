@@ -23,12 +23,17 @@ function App() {
     setItems(myItems);
   };
 
-  const markAllComplete = (e) => {
-    console.log("markAllComplete", e);
+  const markAllComplete = () => {
+    const newItems = items.map((item) => {
+      return { ...item, packed: true };
+    });
+    setItems(newItems);
   };
 
-  const markAllIncomplete = (e) => {
-    console.log("markAllIncomplete", e);
+  const markAllIncomplete = () => {
+    const newItems = items.map((item) => {
+      return { ...item, packed: false };
+    });
   };
 
   return (
