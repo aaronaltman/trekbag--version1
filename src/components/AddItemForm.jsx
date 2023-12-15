@@ -15,7 +15,7 @@ export default function AddItemForm({ setItems }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} autofocus="true">
+    <form onSubmit={handleSubmit} autoFocus={true}>
       <input
         type="text"
         value={itemText}
