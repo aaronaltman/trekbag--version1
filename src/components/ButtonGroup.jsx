@@ -1,7 +1,6 @@
 import Button from "./Button";
 
 export default function ButtonGroup({
-  onClick,
   handleRemoveAll,
   handleResettoInitial,
   markAllComplete,
