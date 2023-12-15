@@ -15,7 +15,12 @@ function Item({ item }) {
         <input type="checkbox" />
         {item}
       </label>
-      <button onClick={(e) => {}} className="delete-button">
+      <button
+        onClick={(e) => {
+          // delete item
+        }}
+        className="delete-button"
+      >
         Delete Item X
       </button>
     </li>

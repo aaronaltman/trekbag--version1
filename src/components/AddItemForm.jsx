@@ -1,18 +1,26 @@
 import Button from "./Button";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function AddItemForm({ setItems }) {
   const [itemText, setItemText] = useState("");
+  const inputRef = useRef();
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
+
+        //form validation
+        if (!itemText) {
+          alert("Please enter an item");
+          return;
+        }
         const newItem = {
           id: Math.random(),
           name: itemText,
           packed: false,
         };
+
         setItems((prev) => [...prev, newItem]);
       }}
     >
@@ -26,6 +34,7 @@ export default function AddItemForm({ setItems }) {
           setItemText(event.target.value);
           console.log(itemText);
         }}
+        autofocus
       />
       <Button type="submit">Add Item to List</Button>
     </form>
