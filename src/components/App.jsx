@@ -15,6 +15,13 @@ function App() {
     });
   };
 
+  const handleDeleteItem = (id) => {
+    const newItems = items.filter((item) => {
+      return item.id !== id;
+    });
+    setItems(newItems);
+  };
+
   const handleRemoveAll = (e) => {
     setItems([]);
   };
@@ -23,8 +30,8 @@ function App() {
     setItems(myItems);
   };
 
-  const markAllComplete = () => {
-    const newItems = items.map((item) => {
+  const markAllComplete = (e) => {
+    const newItems = items.map((e) => {
       return { ...item, packed: true };
     });
     setItems(newItems);
@@ -34,6 +41,7 @@ function App() {
     const newItems = items.map((item) => {
       return { ...item, packed: false };
     });
+    setItems(newItems);
   };
 
   return (
@@ -41,8 +49,9 @@ function App() {
       <BackgroundHeading />
       <main>
         <Header />
-        <ItemList items={items} />
+        <ItemList handleDeleteItem={handleDeleteItem} items={items} />
         <Sidebar
+          handleDeleteItemm={handleDeleteItem}
           markAllIncomplete={markAllIncomplete}
           markAllComplete={markAllComplete}
           handleResettoInitial={handleResettoInitial}

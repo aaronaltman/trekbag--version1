@@ -8,19 +8,14 @@ export default function ItemList({ items }) {
   );
 }
 
-function Item({ item }) {
+function Item({ item, handleDeleteItem }) {
   return (
     <li className="item">
       <label>
         <input type="checkbox" />
         {item}
       </label>
-      <button
-        onClick={(e) => {
-          // delete item
-        }}
-        className="delete-button"
-      >
+      <button onClick={handleDeleteItem} className="delete-button">
         Delete Item X
       </button>
     </li>
