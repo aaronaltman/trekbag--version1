@@ -1,15 +1,23 @@
 export default function ItemList({ items }) {
-  return <ul>{console.log(items)}</ul>;
+  return (
+    <ul>
+      {items.map((item) => {
+        return <Item key={item.id} itemText={item} />;
+      })}
+    </ul>
+  );
 }
 
-function Item({ el }) {
+function Item({ item }) {
   return (
     <li className="item">
       <label>
         <input type="checkbox" />
-        {el.name}
+        {item}
       </label>
-      <button className="delete-button">Delete X</button>
+      <button onClick={(e) => {}} className="delete-button">
+        Delete Item X
+      </button>
     </li>
   );
 }

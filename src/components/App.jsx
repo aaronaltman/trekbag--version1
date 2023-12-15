@@ -14,7 +14,7 @@ function App() {
       <BackgroundHeading />
       <main>
         <Header />
-        <ItemList itemText={items} />
+        <ItemList items={items} />
         <Sidebar setItems={setItems} />
       </main>
       <Footer />

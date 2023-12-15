@@ -1,13 +1,19 @@
 import Button from "./Button";
 import { useState } from "react";
 
-export default function AddItemForm() {
+export default function AddItemForm({ setItems }) {
   const [itemText, setItemText] = useState("");
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
+        const newItem = {
+          id: Math.random(),
+          name: itemText,
+          packed: false,
+        };
+        setItems((prev) => [...prev, newItem]);
       }}
     >
       <h2>
@@ -16,11 +22,12 @@ export default function AddItemForm() {
       <input
         type="text"
         value={itemText}
-        onChange={(e) => {
-          setItemText(e.target.value);
+        onChange={(event) => {
+          setItemText(event.target.value);
+          console.log(itemText);
         }}
       />
-      <Button>Click Me</Button>
+      <Button type="submit">Add Item to List</Button>
     </form>
   );
 }
