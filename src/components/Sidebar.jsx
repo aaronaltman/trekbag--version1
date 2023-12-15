@@ -7,11 +7,13 @@ export default function Sidebar({
   handleRemoveAll,
   handleResettoInitial,
   markAllComplete,
+  markAllIncomplete,
 }) {
   return (
     <div className="sidebar">
       <AddItemForm setItems={setItems} />
       <ButtonGroup
+        markAllIncomplete={markAllIncomplete}
         markAllComplete={markAllComplete}
         handleResettoInitial={handleResettoInitial}
         handleRemoveAll={handleRemoveAll}

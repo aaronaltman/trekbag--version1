@@ -24,7 +24,11 @@ function App() {
   };
 
   const markAllComplete = (e) => {
-    console.log("markAllComplete");
+    console.log("markAllComplete", e);
+  };
+
+  const markAllIncomplete = (e) => {
+    console.log("markAllIncomplete", e);
   };
 
   return (
@@ -34,6 +38,7 @@ function App() {
         <Header />
         <ItemList items={items} />
         <Sidebar
+          markAllIncomplete={markAllIncomplete}
           markAllComplete={markAllComplete}
           handleResettoInitial={handleResettoInitial}
           handleRemoveAll={handleRemoveAll}
