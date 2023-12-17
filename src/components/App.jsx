@@ -1,8 +1,12 @@
 import { initialItems } from "../lib/constants";
+import AddItemForm from "./AddItemForm";
 import BackgroundHeading from "./BackgroundHeading";
+import ButtonGroup from "./ButtonGroup";
+import Counter from "./Counter";
 import Footer from "./Footer";
 import Header from "./Header";
 import ItemList from "./Itemlist";
+import Logo from "./Logo";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
 
@@ -37,7 +41,7 @@ function App() {
   };
 
   const handleResettoInitial = (e) => {
-    setItems(myItems);
+    setItems(initialItems);
   };
 
   const markAllComplete = (e) => {
@@ -58,20 +62,24 @@ function App() {
     <>
       <BackgroundHeading />
       <main>
-        <Header initialItems={initialItems} />
+        <Header>
+          <Logo />
+          <Counter />
+        </Header>
         <ItemList
           handleToggleItem={handleToggleItem}
           handleDeleteItem={handleDeleteItem}
           items={items}
         />
-        <Sidebar
-          handleDeleteItemm={handleDeleteItem}
-          markAllIncomplete={markAllIncomplete}
-          markAllComplete={markAllComplete}
-          handleResettoInitial={handleResettoInitial}
-          handleRemoveAll={handleRemoveAll}
-          setItems={setItems}
-        />
+        <Sidebar>
+          <AddItemForm setItems={setItems} />
+          <ButtonGroup
+            markAllIncomplete={markAllIncomplete}
+            markAllComplete={markAllComplete}
+            handleResettoInitial={handleResettoInitial}
+            handleRemoveAll={handleRemoveAll}
+          />
+        </Sidebar>
       </main>
       <Footer />
     </>
