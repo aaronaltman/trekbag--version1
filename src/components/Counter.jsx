@@ -1,8 +1,8 @@
-export default function Counter({ items }) {
+export default function Counter({ initialItems }) {
   return (
     <>
       <p>
-        <b>{items}</b>this many items
+        <b>{initialItems}</b>this many items
       </p>
     </>
   );

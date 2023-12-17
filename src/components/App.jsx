@@ -1,4 +1,4 @@
-import { myItems } from "../lib/constants";
+import { initialItems } from "../lib/constants";
 import BackgroundHeading from "./BackgroundHeading";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 import { useState } from "react";
 
 function App() {
-  const [items, setItems] = useState(myItems);
+  const [items, setItems] = useState(initialItems);
 
   const handleAddItem = (item) => {
     setItems((prevItems) => {
@@ -58,7 +58,7 @@ function App() {
     <>
       <BackgroundHeading />
       <main>
-        <Header items={items} />
+        <Header initialItems={initialItems} />
         <ItemList
           handleToggleItem={handleToggleItem}
           handleDeleteItem={handleDeleteItem}
