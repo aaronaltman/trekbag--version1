@@ -1,21 +1,38 @@
-export default function ItemList({ items }) {
+import EmptyView from "./EmptyView";
+
+export default function ItemList({
+  items,
+  handleDeleteItem,
+  handletoggleItem,
+}) {
   return (
-    <ul>
+    <ul className="item-list">
+      {items.length === 0 ? <EmptyView /> : null}
       {items.map((item) => {
-        return <Item key={item.id} itemText={item} />;
+        return (
+          <Item
+            key={item.id}
+            itemText={item}
+            handleDeleteItem={handleDeleteItem}
+            handletoggleItem={handletoggleItem}
+          />
+        );
       })}
     </ul>
   );
 }
 
-function Item({ item, handleDeleteItem }) {
+function Item({ item, handleDeleteItem, handletoggleItem }) {
   return (
     <li className="item">
       <label>
-        <input type="checkbox" />
+        <input onChange={() => handletoggleItem(item.id)} type="checkbox" />
         {item}
       </label>
-      <button onClick={handleDeleteItem} className="delete-button">
+      <button
+        onClick={() => handleDeleteItem(item.id)}
+        className="delete-button"
+      >
         Delete Item X
       </button>
     </li>
