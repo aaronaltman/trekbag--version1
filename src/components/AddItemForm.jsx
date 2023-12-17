@@ -15,14 +15,20 @@ export default function AddItemForm({ setItems }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoFocus={true}>
-      <input
-        type="text"
-        value={itemText}
-        onChange={(event) => setItemText(event.target.value)}
-        ref={inputRef}
-      />
-      <Button type="submit">Add Item to List</Button>
-    </form>
+    <>
+      <h2>
+        <b>Add</b> an Item
+      </h2>
+      <form onSubmit={handleSubmit} autoFocus={true}>
+        <input
+          type="text"
+          value={itemText}
+          onChange={(event) => setItemText(event.target.value)}
+          ref={inputRef}
+          placeholder="Enter an item..."
+        />
+        <Button type="submit">Add Item to List</Button>
+      </form>
+    </>
   );
 }

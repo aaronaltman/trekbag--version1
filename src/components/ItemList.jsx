@@ -1,4 +1,20 @@
 import EmptyView from "./EmptyView";
+import Select from "react-select";
+
+const sortingOptions = [
+  {
+    label: "Sort by Default",
+    value: "Default",
+  },
+  {
+    label: "Sort by Packed",
+    value: "Packed",
+  },
+  {
+    label: "Sort by Unpacked",
+    value: "Unpacked",
+  },
+];
 
 export default function ItemList({
   items,
@@ -8,6 +24,11 @@ export default function ItemList({
   return (
     <ul className="item-list">
       {items.length === 0 ? <EmptyView /> : null}
+      {items.length > 0 ? (
+        <section className="sorting">
+          <Select defaultValue={sortingOptions[0]} options={sortingOptions} />
+        </section>
+      ) : null}
       {items.map((item) => {
         return (
           <Item
